@@ -1,18 +1,21 @@
+// Get references to counters and call history container
 const like = document.getElementById("total_like");
 const coin = document.getElementById("total_coin");
 const copy = document.getElementById("total_copy");
 const call_list = document.getElementById("call_list");
 
+// Get references to all buttons
 const like_btn = document.querySelectorAll("#like_btn");
 const copy_btn = document.querySelectorAll("#copy_btn");
 const call_btn = document.querySelectorAll("#call_btn");
 const clear_btn = document.getElementById("clear_btn");
 
-// Like function
+// ---------------- Like Function ----------------
 for (let button of like_btn) {
   button.addEventListener("click", (e) => {
     e.preventDefault();
 
+    // Increase like count by 1
     let likeValue = parseInt(like.innerText);
     likeValue += 1;
 
@@ -20,14 +23,16 @@ for (let button of like_btn) {
   });
 }
 
-// Copy fuction
+// ---------------- Copy Function ----------------
 for (let button of copy_btn) {
   button.addEventListener("click", (e) => {
     e.preventDefault();
 
+    // Get the service's phone number
     const service = button.parentElement.parentElement;
     const contactNumber = service.querySelector("#service_number").textContent;
 
+    // Copy the number to clipboard
     navigator.clipboard
       .writeText(contactNumber)
       .then(() => {
@@ -37,6 +42,7 @@ for (let button of copy_btn) {
         console.error("Failed to copy number");
       });
 
+    // Increase copy count by 1
     let copyValue = parseInt(copy.innerText);
     copyValue += 1;
 
@@ -44,29 +50,27 @@ for (let button of copy_btn) {
   });
 }
 
-// Call function
+// ---------------- Call Function ----------------
 for (let button of call_btn) {
   button.addEventListener("click", (e) => {
     e.preventDefault();
 
-    // Coin value
+    // Deduct 20 coins for each call
     let coinValue = parseInt(coin.innerText);
     if (coinValue < 20) {
       alert("You need more coin to call again");
-      return;
+      return; // Stop if user doesn't have enough coins
     }
     coinValue -= 20;
     coin.innerText = coinValue;
 
-    // Collecting service data
+    // Get service details
     const service = button.parentElement.parentElement;
-
     const serviceName = service.querySelector("#service").textContent;
-
     const serviceNumber = service.querySelector("#service_number").textContent;
 
+    // Create a new call history entry
     const newCall = document.createElement("div");
-
     newCall.classList.add(
       "flex",
       "items-center",
@@ -78,7 +82,7 @@ for (let button of call_btn) {
     );
     newCall.id = "newCall";
 
-    // createing sub-element for new call
+    // Sub-element: service details
     const newCallDetails = document.createElement("div");
     newCallDetails.classList.add("flex", "flex-col", "items-start");
 
@@ -92,38 +96,38 @@ for (let button of call_btn) {
     newCallDetails.appendChild(tempServiceName);
     newCallDetails.appendChild(tempServiceNumber);
 
-    // Time for call history
+    // Sub-element: timestamp
     const now = new Date();
-
     const hours = now.getHours();
-    const finalHours = hours > 12 ? hours - 12 : hours;
+    const finalHours = hours > 12 ? hours - 12 : hours; // Convert 24h → 12h
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
     const meridiem = hours > 12 ? "PM" : "AM";
 
     const time = `${finalHours}:${minutes}:${seconds} ${meridiem}`;
-
     const timeElement = document.createElement("p");
     timeElement.innerText = time;
 
-    // Creating new call log
+    // Add details and time to new call
     newCall.appendChild(newCallDetails);
     newCall.appendChild(timeElement);
 
+    // Add new call entry to call history list
     call_list.appendChild(newCall);
 
-    // Alert for new call
+    // Notify user
     alert(`You have called ${serviceNumber} for ${serviceName}`);
   });
 }
 
-// Remove call history
-
+// ---------------- Clear Call History ----------------
 clear_btn.addEventListener("click", (e) => {
   e.preventDefault();
 
+  // Select all created call history items
   const newCalls = document.querySelectorAll("#newCall");
 
+  // Remove them from the call history list
   for (let call of newCalls) {
     call_list.removeChild(call);
   }
