@@ -37,18 +37,18 @@
         </div>
         <div class="flex items-center gap-2 sm:gap-4">
           <button class="btn rounded-full bg-sky-100 btn-sm sm:btn-md lg:btn-">
-            <p id="life" class="font-bold">0</p>
+            <p id="total_like" class="font-bold">0</p>
             <i class="fa-solid fa-heart text-red-600 font-blod"></i>
           </button>
 
           <button class="btn rounded-full bg-sky-100 btn-sm sm:btn-md">
-            <p id="coin" class="font-bold">100</p>
+            <p id="total_coin" class="font-bold">100</p>
             <img src="./assets/coin.png" alt="" class="size-5 font-blod" />
           </button>
           <button
             class="btn rounded-full btn-sm sm:btn-md lg:btn- bg-green-600 text-white"
           >
-            <p id="copy" class="font-bold">0</p>
+            <p id="total_copy" class="font-bold">0</p>
             <span>Copy</span>
           </button>
         </div>
@@ -80,19 +80,25 @@
           <div class="flex flex-col p-4 sm:p-5 bg-white rounded-lg">
             <div class="flex items-center justify-between">
               <img src="./assets/emergency.png" alt="" class="size-7" />
-              <img src="./assets/heart.png" alt="" class="size-7" />
+              <button id="like_btn" class="text-gray-500">
+                <i class="fa-regular fa-heart"></i>
+              </button>
             </div>
-            <h4 class="font-bold mt-2">National Emergency Service</h4>
-            <p class="text-sm">Emergency Service</p>
-            <h3 class="font-bold mt-3 text-lg">999</h3>
+            <h4 class="font-bold mt-2">Emergency Service Number</h4>
+            <p id="service" class="text-sm">Emergency Service</p>
+            <h3 id="service_number" class="font-bold mt-3 text-lg">999</h3>
             <button class="btn btn-sm rounded-full px-3 py-1 w-fit">
               Emergency
             </button>
             <div class="flex gap-2 mt-5">
-              <button class="flex-1 btn btn-outline border-gray-200">
+              <button
+                id="copy_btn"
+                class="flex-1 btn btn-outline border-gray-200"
+              >
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
               <button
+                id="call_btn"
                 class="flex-1 btn rounded-lg bg-green-600 text-white border-gray-200 w-1/2"
               >
                 <i class="fa-solid fa-phone"></i> Call
@@ -107,19 +113,25 @@
                 alt=""
                 class="size-7"
               />
-              <img src="./assets/heart.png" alt="" class="size-7" />
+              <button id="like_btn" class="text-gray-500">
+                <i class="fa-regular fa-heart"></i>
+              </button>
             </div>
-            <h4 class="font-bold mt-2">National Railway Service</h4>
-            <p class="text-sm">Railway Service</p>
-            <h3 class="font-bold mt-3 text-lg">999</h3>
+            <h4 class="font-bold mt-2">Railway Service Number</h4>
+            <p id="service" class="text-sm">Railway Service</p>
+            <h3 id="service_number" class="font-bold mt-3 text-lg">999</h3>
             <button class="btn btn-sm rounded-full px-3 py-1 w-fit">
               Railway
             </button>
             <div class="flex gap-2 mt-5">
-              <button class="flex-1 btn btn-outline border-gray-200">
+              <button
+                id="copy_btn"
+                class="flex-1 btn btn-outline border-gray-200"
+              >
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
               <button
+                id="call_btn"
                 class="flex-1 btn rounded-lg bg-green-600 text-white border-gray-200 w-1/2"
               >
                 <i class="fa-solid fa-phone"></i> Call
@@ -130,19 +142,25 @@
           <div class="flex flex-col p-4 sm:p-5 bg-white rounded-lg">
             <div class="flex items-center justify-between">
               <img src="./assets/police.png" alt="" class="size-7" />
-              <img src="./assets/heart.png" alt="" class="size-7" />
+              <button id="like_btn" class="text-gray-500">
+                <i class="fa-regular fa-heart"></i>
+              </button>
             </div>
-            <h4 class="font-bold mt-2">Law enforcement</h4>
-            <p class="text-sm">Police</p>
-            <h3 class="font-bold mt-3 text-lg">100</h3>
+            <h4 class="font-bold mt-2">Law enforcement Number</h4>
+            <p id="service" class="text-sm">Police</p>
+            <h3 id="service_number" class="font-bold mt-3 text-lg">100</h3>
             <button class="btn btn-sm rounded-full px-3 py-1 w-fit">
-              Public
+              Police
             </button>
             <div class="flex gap-2 mt-5">
-              <button class="flex-1 btn btn-outline border-gray-200">
+              <button
+                id="copy_btn"
+                class="flex-1 btn btn-outline border-gray-200"
+              >
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
               <button
+                id="call_btn"
                 class="flex-1 btn rounded-lg bg-green-600 text-white border-gray-200 w-1/2"
               >
                 <i class="fa-solid fa-phone"></i> Call
@@ -153,19 +171,25 @@
           <div class="flex flex-col p-4 sm:p-5 bg-white rounded-lg">
             <div class="flex items-center justify-between">
               <img src="./assets/emergency.png" alt="" class="size-7" />
-              <img src="./assets/heart.png" alt="" class="size-7" />
+              <button id="like_btn" class="text-gray-500">
+                <i class="fa-regular fa-heart"></i>
+              </button>
             </div>
-            <h4 class="font-bold mt-2">Ambulance</h4>
-            <p class="text-sm">Ambulance Service</p>
-            <h3 class="font-bold mt-3 text-lg">199</h3>
+            <h4 class="font-bold mt-2">Ambulance Service Number</h4>
+            <p id="service" class="text-sm">Ambulance Service</p>
+            <h3 id="service_number" class="font-bold mt-3 text-lg">199</h3>
             <button class="btn btn-sm rounded-full px-3 py-1 w-fit">
-              Public
+              Ambulance
             </button>
             <div class="flex gap-2 mt-5">
-              <button class="flex-1 btn btn-outline border-gray-200">
+              <button
+                id="copy_btn"
+                class="flex-1 btn btn-outline border-gray-200"
+              >
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
               <button
+                id="call_btn"
                 class="flex-1 btn rounded-lg bg-green-600 text-white border-gray-200 w-1/2"
               >
                 <i class="fa-solid fa-phone"></i> Call
@@ -176,19 +200,25 @@
           <div class="flex flex-col p-4 sm:p-5 bg-white rounded-lg">
             <div class="flex items-center justify-between">
               <img src="./assets/fire-service.png" alt="" class="size-7" />
-              <img src="./assets/heart.png" alt="" class="size-7" />
+              <button id="like_btn" class="text-gray-500">
+                <i class="fa-regular fa-heart"></i>
+              </button>
             </div>
-            <h4 class="font-bold mt-2">Fire Service</h4>
-            <p class="text-sm">Emergency Service</p>
-            <h3 class="font-bold mt-3 text-lg">100</h3>
+            <h4 class="font-bold mt-2">Fire Service Number</h4>
+            <p id="service" class="text-sm">Fire Service</p>
+            <h3 id="service_number" class="font-bold mt-3 text-lg">100</h3>
             <button class="btn btn-sm rounded-full px-3 py-1 w-fit">
-              Public
+              Fire
             </button>
             <div class="flex gap-2 mt-5">
-              <button class="flex-1 btn btn-outline border-gray-200">
+              <button
+                id="copy_btn"
+                class="flex-1 btn btn-outline border-gray-200"
+              >
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
               <button
+                id="call_btn"
                 class="flex-1 btn rounded-lg bg-green-600 text-white border-gray-200 w-1/2"
               >
                 <i class="fa-solid fa-phone"></i> Call
@@ -198,19 +228,25 @@
           <div class="flex flex-col p-4 sm:p-5 bg-white rounded-lg">
             <div class="flex items-center justify-between">
               <img src="./assets/brac.png" alt="" class="size-7" />
-              <img src="./assets/heart.png" alt="" class="size-7" />
+              <button id="like_btn" class="text-gray-500">
+                <i class="fa-regular fa-heart"></i>
+              </button>
             </div>
-            <h4 class="font-bold mt-2">Banking Service</h4>
-            <p class="text-sm">Brac</p>
-            <h3 class="font-bold mt-3 text-lg">102</h3>
+            <h4 class="font-bold mt-2">Banking Service Number</h4>
+            <p id="service" class="text-sm">Banking Service</p>
+            <h3 id="service_number" class="font-bold mt-3 text-lg">102</h3>
             <button class="btn btn-sm rounded-full px-3 py-1 w-fit">
-              Public
+              Bank
             </button>
             <div class="flex gap-2 mt-5">
-              <button class="flex-1 btn btn-outline border-gray-200">
+              <button
+                id="copy_btn"
+                class="flex-1 btn btn-outline border-gray-200"
+              >
                 <i class="fa-regular fa-copy"></i> Copy
               </button>
               <button
+                id="call_btn"
                 class="flex-1 btn rounded-lg bg-green-600 text-white border-gray-200 w-1/2"
               >
                 <i class="fa-solid fa-phone"></i> Call
