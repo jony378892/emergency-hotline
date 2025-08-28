@@ -7,28 +7,28 @@
 - querySelector: It can be used to find the first element that matches the string or selector.
 - querySelectorAll: It can be used to find all element that matches the string with a selector.
 
-```
-    const element = document.getElementById("id");
-    const elements = document.getElementsByClassName("class");
-    const anotherElements = documents.querySelector("#id")
-    const otherElements = documents.querySelectorAll("#id")
+```javascript
+const element = document.getElementById("id");
+const elements = document.getElementsByClassName("class");
+const anotherElements = documents.querySelector("#id");
+const otherElements = documents.querySelectorAll("#id");
 ```
 
 ## 2. How do you create and insert a new element into the DOM?
 
-### we can use createElement and appendChild for createing and inserting an element.
+### we can use createElement and appendChild for createing and inserting an element to DOM.
 
 - First we need to create an element using createElement and specific tag for that element.
 
-```
-    const newElement = document.createElement("p")
+```javascript
+const newElement = document.createElement("p");
 ```
 
 - Then we have to insert the element in a parent element using appendChild.
 
-```
-   const parent = document.getElementById("parent");
-   parent.appendChild(newElement);
+```javascript
+const parent = document.getElementById("parent");
+parent.appendChild(newElement);
 ```
 
 ## 3. What is Event Bubbling and how does it work?

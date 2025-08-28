@@ -42,6 +42,8 @@ for (let button of copy_btn) {
         console.error("Failed to copy number");
       });
 
+    alert(`Number copied: ${contactNumber}`);
+
     // Increase copy count by 1
     let copyValue = parseInt(copy.innerText);
     copyValue += 1;
@@ -58,7 +60,7 @@ for (let button of call_btn) {
     // Deduct 20 coins for each call
     let coinValue = parseInt(coin.innerText);
     if (coinValue < 20) {
-      alert("You need more coin to call again");
+      alert(" ❌ You need minimum 20 coins to call");
       return; // Stop if user doesn't have enough coins
     }
     coinValue -= 20;
@@ -104,8 +106,12 @@ for (let button of call_btn) {
     const seconds = now.getSeconds();
     const meridiem = hours > 12 ? "PM" : "AM";
 
-    const time = `${finalHours}:${minutes}:${seconds} ${meridiem}`;
+    const time = `${finalHours.toString().padStart(2, "0")}:${minutes
+      .toString()
+      .padStart(2, "0")}:${seconds.toString().padStart(2, "0")} ${meridiem}`;
+
     const timeElement = document.createElement("p");
+    timeElement.classList.add("text-sm", "whitespace-nowrap");
     timeElement.innerText = time;
 
     // Add details and time to new call
@@ -116,7 +122,7 @@ for (let button of call_btn) {
     call_list.appendChild(newCall);
 
     // Notify user
-    alert(`You have called ${serviceNumber} for ${serviceName}`);
+    alert(`📞 Calling ${serviceName} ${serviceNumber} ...`);
   });
 }
 
