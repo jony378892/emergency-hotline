@@ -5,9 +5,9 @@ const copy = document.getElementById("total_copy");
 const call_list = document.getElementById("call_list");
 
 // Get references to all buttons
-const like_btn = document.querySelectorAll("#like_btn");
-const copy_btn = document.querySelectorAll("#copy_btn");
-const call_btn = document.querySelectorAll("#call_btn");
+const like_btn = document.querySelectorAll(".like_btn");
+const copy_btn = document.querySelectorAll(".copy_btn");
+const call_btn = document.querySelectorAll(".call_btn");
 const clear_btn = document.getElementById("clear_btn");
 
 // ---------------- Like Function ----------------
@@ -30,7 +30,7 @@ for (let button of copy_btn) {
 
     // Get the service's phone number
     const service = button.parentElement.parentElement;
-    const contactNumber = service.querySelector("#service_number").textContent;
+    const contactNumber = service.querySelector(".service_number").textContent;
 
     // Copy the number to clipboard
     navigator.clipboard
@@ -68,8 +68,8 @@ for (let button of call_btn) {
 
     // Get service details
     const service = button.parentElement.parentElement;
-    const serviceName = service.querySelector("#service").textContent;
-    const serviceNumber = service.querySelector("#service_number").textContent;
+    const serviceName = service.querySelector(".service").textContent;
+    const serviceNumber = service.querySelector(".service_number").textContent;
 
     // Create a new call history entry
     const newCall = document.createElement("div");
@@ -80,9 +80,9 @@ for (let button of call_btn) {
       "p-3",
       "bg-gray-50",
       "rounded-lg",
-      "text-sm"
+      "text-sm",
+      "newCall"
     );
-    newCall.id = "newCall";
 
     // Sub-element: service details
     const newCallDetails = document.createElement("div");
@@ -101,10 +101,10 @@ for (let button of call_btn) {
     // Sub-element: timestamp
     const now = new Date();
     const hours = now.getHours();
-    const finalHours = hours > 12 ? hours - 12 : hours; // Convert 24h → 12h
+    const finalHours = hours % 12 || 12;
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
-    const meridiem = hours > 12 ? "PM" : "AM";
+    const meridiem = hours >= 12 ? "PM" : "AM";
 
     const time = `${finalHours.toString().padStart(2, "0")}:${minutes
       .toString()
@@ -131,7 +131,7 @@ clear_btn.addEventListener("click", (e) => {
   e.preventDefault();
 
   // Select all created call history items
-  const newCalls = document.querySelectorAll("#newCall");
+  const newCalls = document.querySelectorAll(".newCall");
 
   // Remove them from the call history list
   for (let call of newCalls) {
